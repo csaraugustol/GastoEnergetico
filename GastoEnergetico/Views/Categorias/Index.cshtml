@@ -1,0 +1,35 @@
+﻿@using GastoEnergetico.ViewModel.Categorias
+@model GastoEnergetico.ViewModel.Categorias.IndexViewModel
+
+@{
+    ViewData["Title"] = "Categorias";
+}
+<h1>@ViewData["Title"]</h1>
+
+<a href="Categorias/Adiconar">Adicionar Categoria</a>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Descrição</th>
+      <th scope="col">Id Categoria</th>
+      <th scope="col">Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (Categoria c in @Model.Categorias)
+    {
+      <tr>
+        <th scope="row">@c.Id</th>
+        <td>@c.Descricao</td>
+        <td>@c.CategoriaPaiId</td>
+        <td>
+          <a href="/Categorias/Editar/@c.Id">Editar</a>
+          <a href="/Categorias/Remover/@c.Id">Remover</a>
+        </td>
+      </tr>
+    }
+    
+  </tbody>
+</table>
