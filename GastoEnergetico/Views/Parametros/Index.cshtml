@@ -10,7 +10,7 @@
 
 <table class="table table-hover">
   <thead>
-    <tr>
+    <tr class=" text-center">
       <th scope="col">#</th>
       <th scope="col">Valor R$/kWh</th>
       <th scope="col">Faixa Consumo Alto</th>
@@ -21,7 +21,7 @@
   <tbody>
     @foreach (Parametro p in @Model.Parametros)
     {
-      <tr>
+      <tr class="text-center">
         <th scope="row">@p.Id</th>
         <td>@p.ValorKwh</td>
         <td>@p.FaixaConsumoAlto</td>

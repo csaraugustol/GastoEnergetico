@@ -10,7 +10,7 @@
 
 <table class="table table-hover">
   <thead>
-    <tr>
+    <tr class="text-center">
       <th scope="col">#</th>
       <th scope="col">Descrição</th>
       <th scope="col">Id Categoria</th>
@@ -20,7 +20,7 @@
   <tbody>
     @foreach (Categoria c in @Model.Categorias)
     {
-      <tr>
+      <tr class="text-center">
         <th scope="row">@c.Id</th>
         <td>@c.Descricao</td>
         <td>@c.CategoriaPaiId</td>
