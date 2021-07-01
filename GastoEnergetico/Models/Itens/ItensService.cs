@@ -5,8 +5,16 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GastoEnergetico.Models.Itens
 {
-    public class ItensService
+    public class ItensService : IDadosBasicosItensModel
     {
+        public string Id { get; set; }
+        public string Categoria { get; set; }
+        public string Nome { get; set; }
+        public string Descricao { get; set; }
+        public string DataFabricacao { get; set; }
+        public string ConsumoWatts { get; set; }
+        public string HorasUsoDiario { get; set; }
+        
         private readonly DataBaseContext _dataBaseContext;
 
         public ItensService(DataBaseContext dataBaseContext)
@@ -25,6 +33,17 @@ namespace GastoEnergetico.Models.Itens
         {
             return _dataBaseContext.Itens.Include(c => c.Categoria).ToList();
         }
+    }
+
+    public interface IDadosBasicosItensModel
+    {
+        public string Id { get; set; }
+        public string Categoria { get; set; }
+        public string Nome { get; set; }
+        public string Descricao { get; set; }
+        public string DataFabricacao { get; set; }
+        public string ConsumoWatts { get; set; }
+        public string HorasUsoDiario { get; set; }
     }
 }
 

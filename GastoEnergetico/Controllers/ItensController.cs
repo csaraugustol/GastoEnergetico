@@ -44,5 +44,16 @@ namespace GastoEnergetico.Controllers
             
             return View(viewModel);
         }
+        
+        [HttpGet]
+        public IActionResult Adicionar()
+        {
+            var viewModel = new AdicionarViewModel();
+
+            
+            viewModel.ValidarEFiltrar();
+            
+            return View();
+        }
     }
 }

@@ -1,4 +1,6 @@
-﻿using GastoEnergetico.Models.Parametros;
+﻿using System;
+using GastoEnergetico.Models.Parametros;
+using GastoEnergetico.RequestModels.Parametros;
 using GastoEnergetico.ViewModel.Parametros;
 using Microsoft.AspNetCore.Mvc;
 
@@ -29,11 +31,78 @@ namespace GastoEnergetico.Controllers
                     Id = parametrosEntity.Id.ToString(),
                     FaixaConsumoAlto = parametrosEntity.FaixaConsumoAlto.ToString("N"),
                     FaixaConsumoMedio = parametrosEntity.FaixaConsumoMedio.ToString("N"),
-                    ValorKwh = parametrosEntity.ValorKwh.ToString("N")
+                    ValorKwh = parametrosEntity.ValorKwh.ToString("C")
                 });
             }
             
             return View(viewModel);
         }
+
+        [HttpGet]
+        public IActionResult Adicionar()
+        {
+            var viewModel = new AdicionarViewModel();
+
+            
+            viewModel.ValidarEFiltrar();
+            
+            return View();
+        }
+
+        [HttpPost]
+        public RedirectToActionResult Adicionar(AdicionarRequestModel requestModel)
+        {
+            try
+            {
+                _parametrosService.Adicionar(requestModel);
+                TempData["FormMensSucess"] = "Parâmetros adiconados com sucesso.";
+                return RedirectToAction("Index");
+            }
+            catch (Exception e)
+            {
+                return RedirectToAction("Adicionar");
+            }
+            
+        }
+
+        [HttpGet]
+        public IActionResult Editar(int id)
+        {
+            try
+            {
+                var entidadeEsc = _parametrosService.ObterPorId(id);
+
+                var viewModel = new EditarViewModel()
+                {
+                    Id = entidadeEsc.Id.ToString(),
+                    ValorKwh = entidadeEsc.ValorKwh.ToString("C"),
+                    FaixaConsumoAlto = entidadeEsc.FaixaConsumoAlto.ToString("N"),
+                    FaixaConsumoMedio = entidadeEsc.FaixaConsumoMedio.ToString("N")
+                };
+                
+                return View(viewModel);
+            }
+            catch (Exception e)
+            {
+                return RedirectToAction("Index");
+            }
+        }
+        
+        [HttpPost]
+        public IActionResult Editar(int id, EditarRequestModel requestModel)
+        {
+            try
+            {
+                _parametrosService.Editar(id, requestModel);
+
+                return RedirectToAction("Index");
+            }
+            catch (Exception e)
+            {
+                return RedirectToAction("Editar");
+            }
+        }
     }
+    
+    
 }

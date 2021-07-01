@@ -1,4 +1,6 @@
-﻿using GastoEnergetico.Models.Categorias;
+﻿using System;
+using GastoEnergetico.Models.Categorias;
+using GastoEnergetico.RequestModels.Categorias;
 using GastoEnergetico.ViewModel.Categorias;
 using Microsoft.AspNetCore.Mvc;
 
@@ -37,6 +39,35 @@ namespace GastoEnergetico.Controllers
             
             return View(viewModel);
         }
+        
+        
+        [HttpGet]
+        public IActionResult Adicionar()
+        {
+            var viewModel = new AdicionarViewModel();
+
+            
+            viewModel.ValidarEFiltrar();
+            
+            return View();
+        }
+        
+        [HttpPost]
+        public RedirectToActionResult Adicionar(AdicionarRequestModel requestModel)
+        {
+            try
+            {
+                _categoriasService.Adicionar(requestModel);
+                TempData["FormMensSucess"] = "Categorias adiconadas com sucesso.";
+                return RedirectToAction("Index");
+            }
+            catch (Exception e)
+            {
+                return RedirectToAction("Adicionar");
+            }
+            
+        }
+
 
         
     }
