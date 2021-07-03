@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using GastoEnergetico.Models;
-using GastoEnergetico.ViewModel.Itens;
+using GastoEnergetico.ViewModel.Home;
 
 namespace GastoEnergetico.Controllers
 {
@@ -23,10 +23,22 @@ namespace GastoEnergetico.Controllers
         public IActionResult Index()
         {
             var viewModel = new IndexViewModel();
+
+            var categoriasQueMaisConsomem = _analisesService.CategoriasQueMaisConsomem();
+
+            var posicao = 0;
+            foreach (var consumoCategoria in categoriasQueMaisConsomem)
+            {
+                viewModel.CategoriasQueMaisConsomem.Add(new CategoriaQueCosome
+                {
+                    Posicao = (posicao+= 1).ToString(),
+                    NomeCategoria = consumoCategoria.Categoria,
+                    ConsumoMensalKwh = consumoCategoria.ConsumoMensalKwh.ToString("N"),
+                    ValorMensalKwh = consumoCategoria.ValorMensalKwh.ToString("C"),
+                });
+            }
             
-            
-            
-            return View();
+            return View(viewModel);
         }
 
       

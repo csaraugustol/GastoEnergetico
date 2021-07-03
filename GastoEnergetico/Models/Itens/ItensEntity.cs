@@ -27,5 +27,10 @@ namespace GastoEnergetico.Models.Itens
             ConsumoWatts = consumoWatts;
             HorasUsoDiario = horasUsoDiario;
         }
+
+        public decimal CalcularGastoEnergeticoMensalKwh()
+        {
+            return ((ConsumoWatts * HorasUsoDiario) * 30) / 1000;
+        }
     }
 }
