@@ -73,12 +73,22 @@
                 <tr>
                     <th scope="col">Posição</th>
                     <th scope="col">Item</th>
+                    <th scope="col">Categoria a que pertence</th>
                     <th scope="col">Consumo Mensal (Kwh)</th>
                     <th scope="col">Valor Mensal</th>
                 </tr>
                 </thead>
                 <tbody>
-                
+                @foreach (var consumoItem in @Model.ItensQueMaisConsomem)
+                                {
+                                    <tr>
+                                        <th scope="col">@consumoItem.Posicao</th>
+                                        <th scope="col">@consumoItem.NomeItem</th>
+                                        <th scope="col">@consumoItem.NomeCategoriaItem</th>
+                                        <th scope="col">@consumoItem.ConsumoMensalKwh</th>
+                                        <th scope="col">@consumoItem.ValorMensalKwh</th>
+                                    </tr>
+                                }
                 </tbody>
             </table>
         </p>

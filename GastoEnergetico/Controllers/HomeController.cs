@@ -26,7 +26,6 @@ namespace GastoEnergetico.Controllers
             var viewModel = new IndexViewModel();
 
             var categoriasQueMaisConsomem = _analisesService.CategoriasQueMaisConsomem();
-
             var posicao = 0;
             foreach (var consumoCategoria in categoriasQueMaisConsomem)
             {
@@ -35,9 +34,25 @@ namespace GastoEnergetico.Controllers
                     Posicao = (posicao+= 1).ToString(),
                     NomeCategoria = consumoCategoria.Categoria,
                     ConsumoMensalKwh = consumoCategoria.ConsumoMensalKwh.ToString("N"),
-                    ValorMensalKwh = consumoCategoria.ValorMensalKwh.ToString("C"),
+                    ValorMensalKwh = consumoCategoria.ValorMensalKwh.ToString("C")
                 });
             }
+
+            var itensQueMaisConsomem = _analisesService.ItensQueMaisConsomem();
+            var posicao1 = 0;
+            foreach (var consumoItem in itensQueMaisConsomem)
+            {
+                viewModel.ItensQueMaisConsomem.Add(new ItemQueConsome
+                {
+                    Posicao = (posicao1 += 1).ToString(),
+                    NomeItem = consumoItem.Item,
+                    NomeCategoriaItem = consumoItem.Categoria,
+                    ConsumoMensalKwh = consumoItem.ConsumoMensalKwh.ToString("N"),
+                    ValorMensalKwh = consumoItem.ValorMensalKwh.ToString("C")
+                });
+            }
+            
+            
             
             return View(viewModel);
         }

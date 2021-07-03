@@ -25,6 +25,30 @@ namespace GastoEnergetico.Models
             _itensService = itensService;
         }
 
+        public ICollection<ConsumoItem> ItensQueMaisConsomem()
+        {
+            var parametrosAtivos = _parametrosService.ObterParametroAtivo();
+            var todosItens = _itensService.BuscarTodos();
+            var listaDeConsumos = new Collection<ConsumoItem>();
+            decimal consumoMensalItens = 0;
+            foreach (var itensEntity in todosItens)
+            {
+                consumoMensalItens += itensEntity.CalcularGastoEnergeticoMensalKwh();
+            }
+
+            foreach (var itensEntity in todosItens )
+            {
+                listaDeConsumos.Add(new ConsumoItem()
+                {
+                    Item = itensEntity.Nome,
+                    Categoria = itensEntity.Categoria.Descricao,
+                    ConsumoMensalKwh = consumoMensalItens,
+                    ValorMensalKwh = consumoMensalItens * parametrosAtivos.ValorKwh
+                });
+            }
+            return  listaDeConsumos.OrderByDescending(c => c.ConsumoMensalKwh).Take(5).ToList();
+
+        }
         public ICollection<ConsumoCategoria> CategoriasQueMaisConsomem()
         {
             var parametrosAtivos = _parametrosService.ObterParametroAtivo();
@@ -55,5 +79,15 @@ namespace GastoEnergetico.Models
         public string Categoria { get; set; }
         public decimal ConsumoMensalKwh { get; set; }
         public decimal ValorMensalKwh { get; set; }
+    }
+
+    public class ConsumoItem
+    {
+        public string Item { get; set; }
+        
+        public string Categoria { get; set; }
+        public decimal ConsumoMensalKwh { get; set; }
+        public decimal ValorMensalKwh { get; set; }
+        
     }
 }
