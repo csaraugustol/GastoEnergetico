@@ -75,7 +75,7 @@ namespace GastoEnergetico.Controllers
                 var viewModel = new EditarViewModel()
                 {
                     Id = entidadeEsc.Id.ToString(),
-                    ValorKwh = entidadeEsc.ValorKwh.ToString("C"),
+                    ValorKwh = entidadeEsc.ValorKwh.ToString("N"),
                     FaixaConsumoAlto = entidadeEsc.FaixaConsumoAlto.ToString("N"),
                     FaixaConsumoMedio = entidadeEsc.FaixaConsumoMedio.ToString("N")
                 };
@@ -88,20 +88,45 @@ namespace GastoEnergetico.Controllers
             }
         }
         
-        [HttpPost]
-        public IActionResult Editar(int id, EditarRequestModel requestModel)
+    
+    
+    [HttpPost]
+    public IActionResult Editar(int id, EditarRequestModel requestModel)
+    {
+        try
         {
-            try
-            {
-                _parametrosService.Editar(id, requestModel);
+            _parametrosService.Editar(id, requestModel);
 
-                return RedirectToAction("Index");
-            }
-            catch (Exception e)
-            {
-                return RedirectToAction("Editar");
-            }
+            return RedirectToAction("Index");
         }
+        catch (Exception e)
+        {
+            return RedirectToAction("Editar");
+        }
+    }
+    
+    [HttpGet]
+    public IActionResult Remover(int id)
+    {
+        try{
+            var entidadeEsc = _parametrosService.ObterPorId(id);
+            var viewModel = new RemoverViewModel()
+            {
+                Id = entidadeEsc.Id.ToString(),
+                ValorKwh = entidadeEsc.ValorKwh.ToString("N"),
+                FaixaConsumoAlto = entidadeEsc.FaixaConsumoAlto.ToString("N"),
+                FaixaConsumoMedio = entidadeEsc.FaixaConsumoMedio.ToString("N")
+            };
+
+            return View(viewModel);
+        }
+        catch (Exception e)
+        {
+            return RedirectToAction("Index");
+        }
+    }
+    
+    
     }
     
     

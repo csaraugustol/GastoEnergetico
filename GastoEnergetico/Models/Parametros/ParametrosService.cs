@@ -31,7 +31,7 @@ namespace GastoEnergetico.Models.Parametros
         public ParametrosEntity ObterPorId(int id)
         {
             return _dataBaseContext.Parametros.
-                Find();
+                Find(id);
         }
 
         public ParametrosEntity Adicionar(IDadosBasicosParametrosModel dadosBasicos)
