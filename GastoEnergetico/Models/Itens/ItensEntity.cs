@@ -32,5 +32,9 @@ namespace GastoEnergetico.Models.Itens
         {
             return ((ConsumoWatts * HorasUsoDiario) * 30) / 1000;
         }
+        public decimal CalcularGastoEnergeticoMensalWatts()
+        {
+            return ((ConsumoWatts * HorasUsoDiario) * 30);
+        }
     }
 }

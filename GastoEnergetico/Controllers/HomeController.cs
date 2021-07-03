@@ -25,6 +25,16 @@ namespace GastoEnergetico.Controllers
         {
             var viewModel = new IndexViewModel();
 
+            var totalConsumos = _analisesService.totalConsumo();
+            foreach (var consumoTotal in totalConsumos)
+            {
+                viewModel.totalConsumos.Add(new TotalConsumo
+                {
+                    FaixaDeConsumo = consumoTotal.FaixaDeConsumo,
+                    ConsumoMensalWatts = consumoTotal.ConsumoMensalWatts.ToString("N"),
+                    ValorMensalKwh = consumoTotal.ValorMensalKwh.ToString("C")
+                });
+            }
             var categoriasQueMaisConsomem = _analisesService.CategoriasQueMaisConsomem();
             var posicao = 0;
             foreach (var consumoCategoria in categoriasQueMaisConsomem)

@@ -49,6 +49,43 @@ namespace GastoEnergetico.Models
             return  listaDeConsumos.OrderByDescending(c => c.ConsumoMensalKwh).Take(5).ToList();
 
         }
+        public ICollection<ConsumoTotal> totalConsumo()
+        {
+            var parametrosAtivos = _parametrosService.ObterParametroAtivo();
+            var todosItens = _itensService.BuscarTodos();
+            var listaDeConsumos = new Collection<ConsumoTotal>();
+            decimal consumoMensalItens = 0;
+            foreach (var itensEntity in todosItens)
+            {
+                consumoMensalItens += itensEntity.CalcularGastoEnergeticoMensalWatts();
+            }
+
+            foreach (var itensEntity in todosItens )
+            {
+                var ct = new ConsumoTotal();
+                var maior = parametrosAtivos.FaixaConsumoAlto;
+                var medio = parametrosAtivos.FaixaConsumoMedio;
+                var faixa = "";
+                if (consumoMensalItens > maior)
+                {
+                    faixa = "ALTO CONSUMO";
+                }else if (consumoMensalItens < maior && consumoMensalItens >= medio)
+                {
+                    faixa = "MEDIO CONSUMO";
+                }
+                else
+                {
+                    faixa = "BAIXO CONSUMO";
+                }
+
+                ct.FaixaDeConsumo = faixa;
+                ct.ConsumoMensalWatts = consumoMensalItens;
+                ct.ValorMensalKwh = consumoMensalItens * parametrosAtivos.ValorKwh;
+                listaDeConsumos.Add(ct);
+            }
+            return listaDeConsumos.OrderByDescending(c => c.ConsumoMensalWatts).Take(1).ToList();
+
+        }
         public ICollection<ConsumoCategoria> CategoriasQueMaisConsomem()
         {
             var parametrosAtivos = _parametrosService.ObterParametroAtivo();
@@ -70,10 +107,18 @@ namespace GastoEnergetico.Models
                 });
             }
 
+            
+            
             return listaDeConsumos.OrderByDescending(c => c.ConsumoMensalKwh).Take(3).ToList();
         }
     }
 
+    public class ConsumoTotal
+    {
+        public string FaixaDeConsumo { get; set; }
+        public decimal ConsumoMensalWatts { get; set; }
+        public decimal ValorMensalKwh { get; set; }
+    }
     public class ConsumoCategoria
     {
         public string Categoria { get; set; }
