@@ -24,6 +24,10 @@ namespace GastoEnergetico.Models.Parametros
             return _dataBaseContext.Parametros.ToList();
         }
 
+        public ParametrosEntity ObterParametroAtivo()
+        {
+            return _dataBaseContext.Parametros.First();
+        }
         public ParametrosEntity ObterPorId(int id)
         {
             return _dataBaseContext.Parametros.

@@ -827,11 +827,16 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\cesar\\.nuget\\packages\\": {}
+=======
+    "C:\\Users\\Pedro\\.nuget\\packages\\": {}
+>>>>>>> 5261f33d17833d0bf8d062a73be220bbfcf38703
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\cesar\\Documents\\ADS\\PWA\\GastoEnergetico\\GastoEnergetico\\GastoEnergetico.csproj",
       "projectName": "GastoEnergetico",
       "projectPath": "C:\\Users\\cesar\\Documents\\ADS\\PWA\\GastoEnergetico\\GastoEnergetico\\GastoEnergetico.csproj",
@@ -840,6 +845,16 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\cesar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+      "projectUniqueName": "C:\\Users\\Pedro\\Desktop\\index_c#\\webapps\\gastos\\GastoEnergetico\\GastoEnergetico.csproj",
+      "projectName": "GastoEnergetico",
+      "projectPath": "C:\\Users\\Pedro\\Desktop\\index_c#\\webapps\\gastos\\GastoEnergetico\\GastoEnergetico.csproj",
+      "packagesPath": "C:\\Users\\Pedro\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Pedro\\Desktop\\index_c#\\webapps\\gastos\\GastoEnergetico\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\Pedro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 5261f33d17833d0bf8d062a73be220bbfcf38703
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -898,7 +913,11 @@
             "privateAssets": "all"
           }
         },
+<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.204\\RuntimeIdentifierGraph.json"
+=======
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+>>>>>>> 5261f33d17833d0bf8d062a73be220bbfcf38703
       }
     }
   }

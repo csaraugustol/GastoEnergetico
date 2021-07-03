@@ -6,21 +6,40 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using GastoEnergetico.Models;
+using GastoEnergetico.ViewModel.Home;
 
 namespace GastoEnergetico.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly AnalisesService _analisesService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger,AnalisesService analisesService )
         {
             _logger = logger;
+            _analisesService = analisesService;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var viewModel = new IndexViewModel();
+
+            var categoriasQueMaisConsomem = _analisesService.CategoriasQueMaisConsomem();
+
+            var posicao = 0;
+            foreach (var consumoCategoria in categoriasQueMaisConsomem)
+            {
+                viewModel.CategoriasQueMaisConsomem.Add(new CategoriaQueCosome
+                {
+                    Posicao = (posicao+= 1).ToString(),
+                    NomeCategoria = consumoCategoria.Categoria,
+                    ConsumoMensalKwh = consumoCategoria.ConsumoMensalKwh.ToString("N"),
+                    ValorMensalKwh = consumoCategoria.ValorMensalKwh.ToString("C"),
+                });
+            }
+            
+            return View(viewModel);
         }
 
       

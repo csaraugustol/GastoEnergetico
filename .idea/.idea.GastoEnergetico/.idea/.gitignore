@@ -3,11 +3,19 @@
 /workspace.xml
 # Rider ignored files
 /contentModel.xml
+<<<<<<< HEAD
 /projectSettingsUpdater.xml
 /modules.xml
 /.idea.GastoEnergetico.iml
 # Datasource local storage ignored files
 /../../../../../../../../../../:\Users\cesar\Documents\ADS\PWA\GastoEnergetico\.idea\.idea.GastoEnergetico\.idea/dataSources/
+=======
+/modules.xml
+/projectSettingsUpdater.xml
+/.idea.GastoEnergetico.iml
+# Datasource local storage ignored files
+/../../../../../../../../../../:\Users\Pedro\Desktop\index_c#\webapps\gastos\.idea\.idea.GastoEnergetico\.idea/dataSources/
+>>>>>>> 5261f33d17833d0bf8d062a73be220bbfcf38703
 /dataSources.local.xml
 # Editor-based HTTP Client requests
 /httpRequests/

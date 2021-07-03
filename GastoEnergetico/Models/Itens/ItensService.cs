@@ -33,6 +33,11 @@ namespace GastoEnergetico.Models.Itens
         {
             return _dataBaseContext.Itens.Include(c => c.Categoria).ToList();
         }
+        
+        public ICollection<ItensEntity> ObterTodosPorCategoria(int id)
+        {
+            return _dataBaseContext.Itens.Include(c => c.Categoria).Where(c=>c.Id == id).ToList();
+        }
     }
 
     public interface IDadosBasicosItensModel
