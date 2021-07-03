@@ -7,22 +7,46 @@
     <h1 class="display-4">Mapa de Gastos Energéticos</h1>
     <h3>Controle os seus gastos enérgeticos e diminua o valor da conta de luz.</h3>
 </div>
-<div class="card" style="width: 25rem;">
+<div class="d-flex justify-content-center mb-5">
+    <div class="card" style="width: 25rem;">
+      
+        <div class="card-body">
+            <h5 class="card-title">Total de consumo de energia..</h5>
+            <p class="card-text">
+            
+                <table class="table table-hover table-dark table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">Total gasto (Watts)</th>
+                        <th scope="col">Valor Mensal</th>
+                        <th scope="col">Faixa de consumo</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    
+                    </tbody>
+                </table>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="d-flex justify-content-center">
+<div class="card mr-5" style="width: 25rem;">
   
-  <div class="card-body">
-    <h5 class="card-title">Categorias que mais consomem..</h5>
-      <p class="card-text">
+    <div class="card-body">
+        <h5 class="card-title">Categorias que mais consomem..</h5>
+        <p class="card-text">
         
-            <table class="table table-hover">
-             <thead>
-                  <tr>
-                      <th scope="col">Posição</th>
-                      <th scope="col">Categoria</th>
-                      <th scope="col">Consumo Mensal (Kwh)</th>
-                      <th scope="col">Valor Mensal</th>
-                  </tr>
-            </thead>
-            <tbody>
+            <table class="table table-hover table-light">
+                <thead>
+                <tr>
+                    <th scope="col">Posição</th>
+                    <th scope="col">Categoria</th>
+                    <th scope="col">Consumo Mensal (Kwh)</th>
+                    <th scope="col">Valor Mensal</th>
+                </tr>
+                </thead>
+                <tbody>
                 @foreach (var consumoCategoria in @Model.CategoriasQueMaisConsomem)
                 {
                     <tr>
@@ -32,8 +56,32 @@
                         <th scope="col">@consumoCategoria.ValorMensalKwh</th>
                     </tr>
                 }
-            </tbody>
+                </tbody>
             </table>
-      </p>
-  </div>
+        </p>
+    </div>
+</div>
+
+<div class="card" style="width: 25rem;">
+  
+    <div class="card-body">
+        <h5 class="card-title">Itens que mais consomem..</h5>
+        <p class="card-text">
+        
+            <table class="table table-hover table-light">
+                <thead>
+                <tr>
+                    <th scope="col">Posição</th>
+                    <th scope="col">Item</th>
+                    <th scope="col">Consumo Mensal (Kwh)</th>
+                    <th scope="col">Valor Mensal</th>
+                </tr>
+                </thead>
+                <tbody>
+                
+                </tbody>
+            </table>
+        </p>
+    </div>
+</div>
 </div>
