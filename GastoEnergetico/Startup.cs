@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using GastoEnergetico.Data;
+using GastoEnergetico.Models;
 using GastoEnergetico.Models.Categorias;
 using GastoEnergetico.Models.Itens;
 using GastoEnergetico.Models.Parametros;
@@ -38,6 +39,7 @@ namespace GastoEnergetico
             services.AddTransient<CategoriasService>();
             services.AddTransient<ItensService>();
             services.AddTransient<ParametrosService>();
+            services.AddTransient<AnalisesService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

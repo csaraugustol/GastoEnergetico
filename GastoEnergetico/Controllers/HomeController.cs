@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using GastoEnergetico.Models;
+using GastoEnergetico.ViewModel.Itens;
 
 namespace GastoEnergetico.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly AnalisesService _analisesService;
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -20,6 +22,10 @@ namespace GastoEnergetico.Controllers
 
         public IActionResult Index()
         {
+            var viewModel = new IndexViewModel();
+            
+            
+            
             return View();
         }
 
