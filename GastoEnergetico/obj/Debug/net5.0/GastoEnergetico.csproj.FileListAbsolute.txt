@@ -108,3 +108,4 @@ C:\Users\Pedro\Desktop\Nova pasta (4)\GastoEnergetico-3a9eba73def21a225c8ae1e7f1
 C:\Users\Pedro\Desktop\Nova pasta (4)\GastoEnergetico-3a9eba73def21a225c8ae1e7f12f56fd7f1f714f\GastoEnergetico\obj\Debug\net5.0\ref\GastoEnergetico.dll
 C:\Users\Pedro\Desktop\Nova pasta (4)\GastoEnergetico-3a9eba73def21a225c8ae1e7f12f56fd7f1f714f\GastoEnergetico\obj\Debug\net5.0\GastoEnergetico.pdb
 C:\Users\Pedro\Desktop\Nova pasta (4)\GastoEnergetico-3a9eba73def21a225c8ae1e7f12f56fd7f1f714f\GastoEnergetico\obj\Debug\net5.0\GastoEnergetico.genruntimeconfig.cache
+C:\Users\Pedro\Desktop\index_c#\webapps\gastos\GastoEnergetico\obj\Debug\net5.0\Razor\Views\Categorias\editar.cshtml.g.cs

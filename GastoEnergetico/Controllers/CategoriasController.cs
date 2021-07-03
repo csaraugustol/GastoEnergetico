@@ -68,7 +68,42 @@ namespace GastoEnergetico.Controllers
             
         }
 
+        [HttpGet]
+        public IActionResult Editar(int id)
+        {
+            try
+            {
+                var entidadeEsc = _categoriasService.ObterPorId(id);
 
+                var viewModel = new EditarViewModel()
+                {
+                    Id = entidadeEsc.Id.ToString(),
+                    Descricao = entidadeEsc.Descricao,
+                    CategoriaPaiId = entidadeEsc.CategoriaPaiId.ToString()
+                };
+                
+                return View(viewModel);
+            }
+            catch (Exception e)
+            {
+                return RedirectToAction("Index");
+            }
+        }
+        
+        [HttpPost]
+        public IActionResult Editar(int id, EditarRequestModel requestModel)
+        {
+            try
+            {
+                _categoriasService.Editar(id, requestModel);
+
+                return RedirectToAction("Index");
+            }
+            catch (Exception e)
+            {
+                return RedirectToAction("Editar");
+            }
+        }
         
     }
 }
