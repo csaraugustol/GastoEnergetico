@@ -65,6 +65,7 @@ namespace GastoEnergetico.Controllers
             
         }
 
+        
         [HttpGet]
         public IActionResult Editar(int id)
         {
@@ -88,45 +89,55 @@ namespace GastoEnergetico.Controllers
             }
         }
         
-    
-    
-    [HttpPost]
-    public IActionResult Editar(int id, EditarRequestModel requestModel)
-    {
-        try
+        [HttpPost]
+        public IActionResult Editar(int id, EditarRequestModel requestModel)
         {
-            _parametrosService.Editar(id, requestModel);
-
-            return RedirectToAction("Index");
-        }
-        catch (Exception e)
-        {
-            return RedirectToAction("Editar");
-        }
-    }
-    
-    [HttpGet]
-    public IActionResult Remover(int id)
-    {
-        try{
-            var entidadeEsc = _parametrosService.ObterPorId(id);
-            var viewModel = new RemoverViewModel()
+            try
             {
-                Id = entidadeEsc.Id.ToString(),
-                ValorKwh = entidadeEsc.ValorKwh.ToString("N"),
-                FaixaConsumoAlto = entidadeEsc.FaixaConsumoAlto.ToString("N"),
-                FaixaConsumoMedio = entidadeEsc.FaixaConsumoMedio.ToString("N")
-            };
+                _parametrosService.Editar(id, requestModel);
 
-            return View(viewModel);
+                return RedirectToAction("Index");
+            }
+            catch (Exception e)
+            {
+                return RedirectToAction("Editar");
+            }
         }
-        catch (Exception e)
+        
+        [HttpGet]
+        public IActionResult Remover(int id)
         {
-            return RedirectToAction("Index");
+            try{
+                var entidadeEsc = _parametrosService.ObterPorId(id);
+                var viewModel = new RemoverViewModel()
+                {
+                    Id = entidadeEsc.Id.ToString(),
+                    ValorKwh = entidadeEsc.ValorKwh.ToString("N"),
+                    FaixaConsumoAlto = entidadeEsc.FaixaConsumoAlto.ToString("N"),
+                    FaixaConsumoMedio = entidadeEsc.FaixaConsumoMedio.ToString("N")
+                };
+
+                return View(viewModel);
+            }
+            catch (Exception e)
+            {
+                return RedirectToAction("Index");
+            }
         }
-    }
-    
-    
+        
+        [HttpPost]
+        public RedirectToActionResult Remover(int id, object requestModel)
+        {
+            try
+            {
+                _parametrosService.Remover(id);
+                return RedirectToAction("Index");
+            }
+            catch (Exception e)
+            {
+                return RedirectToAction("Remover");
+            }
+        }
     }
     
     

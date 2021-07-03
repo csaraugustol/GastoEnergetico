@@ -832,11 +832,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\cesar\\Documents\\ADS\\PWA\\CertoGastoEnergetico\\GastoEnergetico\\GastoEnergetico\\GastoEnergetico.csproj",
+      "projectUniqueName": "C:\\Users\\cesar\\Downloads\\gastos - Copia\\gastos - Copia\\GastoEnergetico\\GastoEnergetico.csproj",
       "projectName": "GastoEnergetico",
-      "projectPath": "C:\\Users\\cesar\\Documents\\ADS\\PWA\\CertoGastoEnergetico\\GastoEnergetico\\GastoEnergetico\\GastoEnergetico.csproj",
+      "projectPath": "C:\\Users\\cesar\\Downloads\\gastos - Copia\\gastos - Copia\\GastoEnergetico\\GastoEnergetico.csproj",
       "packagesPath": "C:\\Users\\cesar\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\cesar\\Documents\\ADS\\PWA\\CertoGastoEnergetico\\GastoEnergetico\\GastoEnergetico\\obj\\",
+      "outputPath": "C:\\Users\\cesar\\Downloads\\gastos - Copia\\gastos - Copia\\GastoEnergetico\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\cesar\\AppData\\Roaming\\NuGet\\NuGet.Config",

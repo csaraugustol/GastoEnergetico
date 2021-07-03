@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "z0g21ZWVQEgI2K/iphiUkky7huKt4gRbaFhUR80l1IHrQYYB0aceVzrtN1nfbZQEO9svH3C9Dr3RPfIfa20OWg==",
+  "dgSpecHash": "A6D8oPxLnFIAORQR6Hgi+WZmUWHNZhsMqou1dYj0T/+2pD0jeZhqnEo+1KdHwIKI/Xuw8P9rbFc03UkR8em1Ng==",
   "success": true,
-  "projectFilePath": "C:\\Users\\cesar\\Documents\\ADS\\PWA\\CertoGastoEnergetico\\GastoEnergetico\\GastoEnergetico\\GastoEnergetico.csproj",
+  "projectFilePath": "C:\\Users\\cesar\\Downloads\\gastos - Copia\\gastos - Copia\\GastoEnergetico\\GastoEnergetico.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\cesar\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\cesar\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
