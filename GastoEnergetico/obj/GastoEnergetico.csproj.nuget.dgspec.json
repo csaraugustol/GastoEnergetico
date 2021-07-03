@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Pedro\\Desktop\\Nova pasta (4)\\GastoEnergetico-3a9eba73def21a225c8ae1e7f12f56fd7f1f714f\\GastoEnergetico\\GastoEnergetico.csproj": {}
+    "C:\\Users\\Pedro\\Desktop\\index_c#\\webapps\\gastos\\GastoEnergetico\\GastoEnergetico.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Pedro\\Desktop\\Nova pasta (4)\\GastoEnergetico-3a9eba73def21a225c8ae1e7f12f56fd7f1f714f\\GastoEnergetico\\GastoEnergetico.csproj": {
+    "C:\\Users\\Pedro\\Desktop\\index_c#\\webapps\\gastos\\GastoEnergetico\\GastoEnergetico.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Pedro\\Desktop\\Nova pasta (4)\\GastoEnergetico-3a9eba73def21a225c8ae1e7f12f56fd7f1f714f\\GastoEnergetico\\GastoEnergetico.csproj",
+        "projectUniqueName": "C:\\Users\\Pedro\\Desktop\\index_c#\\webapps\\gastos\\GastoEnergetico\\GastoEnergetico.csproj",
         "projectName": "GastoEnergetico",
-        "projectPath": "C:\\Users\\Pedro\\Desktop\\Nova pasta (4)\\GastoEnergetico-3a9eba73def21a225c8ae1e7f12f56fd7f1f714f\\GastoEnergetico\\GastoEnergetico.csproj",
+        "projectPath": "C:\\Users\\Pedro\\Desktop\\index_c#\\webapps\\gastos\\GastoEnergetico\\GastoEnergetico.csproj",
         "packagesPath": "C:\\Users\\Pedro\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Pedro\\Desktop\\Nova pasta (4)\\GastoEnergetico-3a9eba73def21a225c8ae1e7f12f56fd7f1f714f\\GastoEnergetico\\obj\\",
+        "outputPath": "C:\\Users\\Pedro\\Desktop\\index_c#\\webapps\\gastos\\GastoEnergetico\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Pedro\\AppData\\Roaming\\NuGet\\NuGet.Config",

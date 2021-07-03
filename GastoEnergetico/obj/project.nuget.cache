@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "i1+RKLfmM1CfGPQ+cebK/1bHsif6ukpm+rUHxZ2tQkryI11Bn0ErndWbWyoYqmU05FgvTF7CLWkMd8cO6X4zKA==",
+  "dgSpecHash": "zxHymuIAMBdRWz2AR3Nxcw9hH4saUGVq3NB3dwWIbYaNyjK3D0MqijT1egG36yMF07U6t8sbp1tnCwZDTgyh/w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Pedro\\Desktop\\Nova pasta (4)\\GastoEnergetico-3a9eba73def21a225c8ae1e7f12f56fd7f1f714f\\GastoEnergetico\\GastoEnergetico.csproj",
+  "projectFilePath": "C:\\Users\\Pedro\\Desktop\\index_c#\\webapps\\gastos\\GastoEnergetico\\GastoEnergetico.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Pedro\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Pedro\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
