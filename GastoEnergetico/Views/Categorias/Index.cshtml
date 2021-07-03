@@ -25,7 +25,7 @@
         <td>@c.Descricao</td>
         <td>@c.CategoriaPaiId</td>
         <td>
-          <a href="/Categorias/Editar/@c.Id">Editar</a>
+          <a asp-controller="Categorias" asp-action="Editar" asp-route-id="@c.Id" >Editar</a>
           <a href="/Categorias/Remover/@c.Id">Remover</a>
         </td>
       </tr>

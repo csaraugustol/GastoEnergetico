@@ -71,8 +71,7 @@ namespace GastoEnergetico.Controllers
         [HttpGet]
         public IActionResult Editar(int id)
         {
-            try
-            {
+            
                 var entidadeEsc = _categoriasService.ObterPorId(id);
 
                 var viewModel = new EditarViewModel()
@@ -83,11 +82,7 @@ namespace GastoEnergetico.Controllers
                 };
                 
                 return View(viewModel);
-            }
-            catch (Exception e)
-            {
-                return RedirectToAction("Index");
-            }
+            
         }
         
         [HttpPost]

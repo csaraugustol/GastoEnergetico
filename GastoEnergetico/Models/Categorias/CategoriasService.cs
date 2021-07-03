@@ -30,7 +30,7 @@ namespace GastoEnergetico.Models.Categorias
         public CategoriasEntity ObterPorId(int id)
         {
             return _dataBaseContext.Categorias.
-                Find();
+                Find(id);
         }
         
         public CategoriasEntity Adicionar(IDadosBasicosCategoriaModel dadosBasicos)
