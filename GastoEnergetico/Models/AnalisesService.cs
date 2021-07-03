@@ -57,7 +57,7 @@ namespace GastoEnergetico.Models
             decimal consumoMensalItens = 0;
             foreach (var itensEntity in todosItens)
             {
-                consumoMensalItens += itensEntity.CalcularGastoEnergeticoMensalWatts();
+                consumoMensalItens += itensEntity.CalcularGastoEnergeticoMensalKwh();
             }
 
             foreach (var itensEntity in todosItens )

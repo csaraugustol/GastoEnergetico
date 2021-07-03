@@ -169,3 +169,5 @@ C:\Users\cesar\Downloads\gastos - Copia\gastos - Copia\GastoEnergetico\obj\Debug
 C:\Users\cesar\Downloads\gastos - Copia\gastos - Copia\GastoEnergetico\obj\Debug\net5.0\GastoEnergetico.pdb
 C:\Users\cesar\Downloads\gastos - Copia\gastos - Copia\GastoEnergetico\obj\Debug\net5.0\GastoEnergetico.genruntimeconfig.cache
 C:\Users\cesar\Downloads\gastos - Copia\gastos - Copia\GastoEnergetico\obj\Debug\net5.0\Razor\Views\Itens\Editar.cshtml.g.cs
+C:\Users\Pedro\Desktop\index_c#\webapps\gastos\GastoEnergetico\obj\Debug\net5.0\Razor\Views\Itens\Editar.cshtml.g.cs
+C:\Users\Pedro\Desktop\index_c#\webapps\gastos\GastoEnergetico\obj\Debug\net5.0\Razor\Views\Parametros\remover.cshtml.g.cs
