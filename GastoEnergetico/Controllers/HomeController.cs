@@ -15,9 +15,10 @@ namespace GastoEnergetico.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly AnalisesService _analisesService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger,AnalisesService analisesService )
         {
             _logger = logger;
+            _analisesService = analisesService;
         }
 
         public IActionResult Index()
