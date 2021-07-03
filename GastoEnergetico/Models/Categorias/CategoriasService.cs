@@ -41,7 +41,14 @@ namespace GastoEnergetico.Models.Categorias
 
             return novaEntidade;
         }
-     
+
+        public CategoriasEntity Remover(int id)
+        {
+            var categoriaEntity = ObterPorId(id);
+            _dataBaseContext.Categorias.Remove(categoriaEntity);
+            _dataBaseContext.SaveChanges();
+            return categoriaEntity;
+        }
         public CategoriasEntity Editar(
             int id, 
             IDadosBasicosCategoriaModel dadosBasicos

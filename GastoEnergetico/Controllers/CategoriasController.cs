@@ -71,7 +71,8 @@ namespace GastoEnergetico.Controllers
         [HttpGet]
         public IActionResult Editar(int id)
         {
-            
+            try
+            {
                 var entidadeEsc = _categoriasService.ObterPorId(id);
 
                 var viewModel = new EditarViewModel()
@@ -80,9 +81,13 @@ namespace GastoEnergetico.Controllers
                     Descricao = entidadeEsc.Descricao,
                     CategoriaPaiId = entidadeEsc.CategoriaPaiId.ToString()
                 };
-                
+
                 return View(viewModel);
-            
+            }
+            catch (Exception e)
+            {
+                return RedirectToAction("Index");
+            }
         }
         
         [HttpPost]
@@ -99,6 +104,38 @@ namespace GastoEnergetico.Controllers
                 return RedirectToAction("Editar");
             }
         }
-        
+
+        [HttpGet]
+        public IActionResult Remover(int id)
+        {
+            try{
+            var entidadeEsc = _categoriasService.ObterPorId(id);
+            var viewModel = new RemoverViewModel()
+            {
+                Id = entidadeEsc.Id.ToString(),
+                Descricao = entidadeEsc.Descricao,
+                CategoriaPaiId = entidadeEsc.CategoriaPaiId.ToString()
+            };
+
+            return View(viewModel);
+            }
+            catch (Exception e)
+            {
+                return RedirectToAction("Index");
+            }
+        }
+        [HttpPost]
+        public RedirectToActionResult Remover(int id, object requestModel)
+        {
+            try
+            {
+                _categoriasService.Remover(id);
+                return RedirectToAction("Index");
+            }
+            catch (Exception e)
+            {
+                return RedirectToAction("Remover");
+            }
+        }
     }
 }

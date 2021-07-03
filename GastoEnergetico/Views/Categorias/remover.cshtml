@@ -1,0 +1,12 @@
+﻿@model GastoEnergetico.ViewModel.Categorias.RemoverViewModel
+@{
+    ViewData["Title"] = "Remover Categoria";
+}
+<h1>@ViewData["Title"]</h1>
+<form action="/Categorias/Remover/@Model.Id" method="post">
+    <h2>Deseja realmente remover a categoria @Model.Descricao ?</h2>
+    <input type="submit" value="Confirmar" class="btn btn-danger"/>
+</form>
+
+
+<a href="/Categorias">Voltar</a>
