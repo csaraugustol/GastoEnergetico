@@ -31,7 +31,7 @@ namespace GastoEnergetico.Models.Parametros
         public ParametrosEntity ObterPorId(int id)
         {
             return _dataBaseContext.Parametros.
-                Find();
+                Find(id);
         }
 
         public ParametrosEntity Adicionar(IDadosBasicosParametrosModel dadosBasicos)
@@ -46,7 +46,7 @@ namespace GastoEnergetico.Models.Parametros
         public ParametrosEntity Editar(
             int id, 
             IDadosBasicosParametrosModel dadosBasicos
-            )
+        )
         {
             var entidadeAEditar = ObterPorId(id);
 
@@ -56,6 +56,13 @@ namespace GastoEnergetico.Models.Parametros
             return entidadeAEditar;
         }
         
+        public ParametrosEntity Remover(int id)
+        {
+            var entidadeEntity = ObterPorId(id);
+            _dataBaseContext.Parametros.Remove(entidadeEntity);
+            _dataBaseContext.SaveChanges();
+            return entidadeEntity;
+        }
         private ParametrosEntity ValidarDadosBasicos(
             IDadosBasicosParametrosModel dadosBasicosP,
             ParametrosEntity entidadeExistente = null

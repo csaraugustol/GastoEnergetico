@@ -1,13 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using GastoEnergetico.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualBasic.CompilerServices;
 
 namespace GastoEnergetico.Models.Itens
 {
     public class ItensService : IDadosBasicosItensModel
     {
-        public string Id { get; set; }
+
         public string Categoria { get; set; }
         public string Nome { get; set; }
         public string Descricao { get; set; }
@@ -29,6 +31,12 @@ namespace GastoEnergetico.Models.Itens
                 .ToList();
         }
         
+        public ItensEntity ObterPorId(int id)
+        {
+            return _dataBaseContext.Itens.
+                Find(id);
+        }
+        
         public ICollection<ItensEntity> ObterTodos()
         {
             return _dataBaseContext.Itens.Include(c => c.Categoria).ToList();
@@ -38,11 +46,97 @@ namespace GastoEnergetico.Models.Itens
         {
             return _dataBaseContext.Itens.Include(c => c.Categoria).Where(c=>c.Id == id).ToList();
         }
+        
+        public ItensEntity Adicionar(IDadosBasicosItensModel dadosBasicos)
+        {
+            var novaEntidade = ValidarDadosBasicos(dadosBasicos);
+            _dataBaseContext.Itens.Add(novaEntidade);
+            _dataBaseContext.SaveChanges();
+
+            return novaEntidade;
+        }
+        
+        private ItensEntity ValidarDadosBasicos(
+            IDadosBasicosItensModel dadosBasicosP,
+            ItensEntity entidadeExistente = null
+        )
+        {
+            var entidade = entidadeExistente ?? new ItensEntity();
+
+           /* if (dadosBasicosP.Descricao == null  || dadosBasicosP.CategoriaPaiId == null)
+            {
+                throw new Exception("Campo obrigatório.");
+            }*/
+
+            try
+            {
+                var valor = dadosBasicosP.Nome;
+                entidade.Nome = valor;
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Verifique a informação digitada.");
+            }
+            
+            try
+            {
+                var valor = dadosBasicosP.Descricao;
+                entidade.Descricao = valor;
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Verifique a informação digitada.");
+            }
+            
+            try
+            {
+                var valor = DateTime.Parse(dadosBasicosP.DataFabricacao);
+                entidade.DataFabricacao = valor;
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Verifique a informação digitada.");
+            }
+            
+            try
+            {
+                var valor = Decimal.Parse(dadosBasicosP.ConsumoWatts);
+                entidade.ConsumoWatts = valor;
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Verifique a informação digitada.");
+            }
+            
+            try
+            {
+                var valor = IntegerType.FromString(dadosBasicosP.HorasUsoDiario);
+                entidade.HorasUsoDiario = valor;
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Verifique a informação digitada.");
+            }
+            
+            
+            try
+            {
+                
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Verifique a informação digitada.");
+            }
+            
+           
+            
+            return entidade;
+        }
     }
 
     public interface IDadosBasicosItensModel
     {
-        public string Id { get; set; }
+
         public string Categoria { get; set; }
         public string Nome { get; set; }
         public string Descricao { get; set; }

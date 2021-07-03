@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using GastoEnergetico.Models.Categorias;
 using GastoEnergetico.Models.Itens;
+using GastoEnergetico.ViewModel.Categorias;
 
 namespace GastoEnergetico.ViewModel.Itens
 {
@@ -14,13 +15,24 @@ namespace GastoEnergetico.ViewModel.Itens
         public string DataFabricacao { get; set; }
         public string ConsumoWatts { get; set; }
         public string HorasUsoDiario { get; set; }
-        
+
+        public AdicionarViewModel()
+        {
+            ListaCategorias = new List<Categoria>();
+        }
+
+
         public ICollection ValidarEFiltrar()
         {
             var listaErros = new List<string>();
 
             return listaErros;
         }
+
+        public ICollection<Categoria> ListaCategorias { get; set; }
+        
         
     }
+
+   
 }

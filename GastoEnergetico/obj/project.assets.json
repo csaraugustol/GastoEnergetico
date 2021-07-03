@@ -827,19 +827,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Pedro\\.nuget\\packages\\": {}
+    "C:\\Users\\cesar\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Pedro\\Desktop\\index_c#\\webapps\\gastos\\GastoEnergetico\\GastoEnergetico.csproj",
+      "projectUniqueName": "C:\\Users\\cesar\\Downloads\\gastos - Copia\\gastos - Copia\\GastoEnergetico\\GastoEnergetico.csproj",
       "projectName": "GastoEnergetico",
-      "projectPath": "C:\\Users\\Pedro\\Desktop\\index_c#\\webapps\\gastos\\GastoEnergetico\\GastoEnergetico.csproj",
-      "packagesPath": "C:\\Users\\Pedro\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Pedro\\Desktop\\index_c#\\webapps\\gastos\\GastoEnergetico\\obj\\",
+      "projectPath": "C:\\Users\\cesar\\Downloads\\gastos - Copia\\gastos - Copia\\GastoEnergetico\\GastoEnergetico.csproj",
+      "packagesPath": "C:\\Users\\cesar\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\cesar\\Downloads\\gastos - Copia\\gastos - Copia\\GastoEnergetico\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Pedro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\cesar\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -898,7 +898,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.204\\RuntimeIdentifierGraph.json"
       }
     }
   }
